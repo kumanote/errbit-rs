@@ -1,0 +1,38 @@
+[package]
+name = "errbit"
+version = "0.1.0"
+authors = ["Hiroki Tanaka <support@kumano-te.com>"]
+license = "MIT"
+edition = "2018"
+description = "Rust implementation of errbit client that is compatible with airbrake client."
+repository = "https://github.com/kumanote/errbit-rs"
+readme = "README.md"
+keywords = ["errbit", "error reporting", "airbrake"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = { version = "1.0", features = ["backtrace"] }
+thiserror = "1.0"
+hostname = "0.3.1"
+
+[dependencies.futures]
+version = "0.3"
+
+[dependencies.tokio]
+version = "1.12"
+features = ["full"]
+
+[dependencies.http]
+version = "0.2"
+
+[dependencies.hyper]
+version = "0.14"
+features = ["client", "http1", "http2", "tcp"]
+
+[dependencies.hyper-rustls]
+version = "0.22.1"
+
+[dev-dependencies]
+serial_test = "0.5.1"
+dotenv = "0.15.0"
